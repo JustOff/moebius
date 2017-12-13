@@ -1529,7 +1529,7 @@ var loadManifestFromZipReader = Task.async(function*(aZipReader, aInstallLocatio
         throw new Error(`Webextension is signed with an invalid id (${addon.id})`);
       }
     }
-    if (!addon.id && aInstallLocation == TemporaryInstallLocation) {
+    if (!addon.id) {
       addon.id = generateTemporaryInstallID(aZipReader.file);
     }
   }
